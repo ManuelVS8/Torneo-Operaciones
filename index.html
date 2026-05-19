@@ -36,7 +36,8 @@ body{
 @keyframes ropeWiggle{0%,100%{transform:scaleY(1);}50%{transform:scaleY(1.04);}}
 @keyframes flashGreen{0%{background:#d4edda;}100%{background:transparent;}}
 @keyframes flashRed{0%{background:#f8d7da;}100%{background:transparent;}}
-
+#charLeft, #charRight { transition: transform 0.45s cubic-bezier(.34,1.4,.64,1); }
+#ropePath { transition: d 0.45s cubic-bezier(.34,1.2,.64,1); }
 /* TOP CONTROLS */
 .top-controls{position:absolute;top:.8rem;right:1rem;display:flex;align-items:center;gap:8px;z-index:20;}
 .mute-btn{
@@ -607,47 +608,57 @@ function updatePlayerCount(){
 }
 
 // ===== GENERADOR DE PREGUNTAS =====
-function genQuestion(){
-  const op = activeOps[Math.floor(Math.random()*activeOps.length)];
-  let a,b,answer,display,extraAnswer=0,hint='';
-  if(op==='suma'){
-    const max=+document.getElementById('sumaMax').value;
-    a=Math.floor(Math.random()*max);
-    b=Math.floor(Math.random()*(max-a));
-    answer=a+b; display=`${a} + ${b} = ?`;
-  } else if(op==='resta'){
-    const max=+document.getElementById('restaMax').value;
-    a=Math.floor(Math.random()*max)+1;
-    b=Math.floor(Math.random()*a);
-    answer=a-b; display=`${a} − ${b} = ?`;
-  } else if(op==='multiplicacion'){
-    const tbs=tables.length?tables:[1,2,3,4,5,6,7,8,9,10];
-    a=tbs[Math.floor(Math.random()*tbs.length)];
-    b=Math.floor(Math.random()*10)+1;
-    answer=a*b; display=`${a} × ${b} = ?`;
-  } else {
-    const sinResto=document.getElementById('divSinResto').checked;
-    const f1=Math.floor(Math.random()*9)+1;
-    const f2=Math.floor(Math.random()*9)+1;
-    const dividendo=f1*f2+(sinResto?0:Math.floor(Math.random()*f2));
-    const cociente=Math.floor(dividendo/f2);
-    const resto=dividendo%f2;
-    answer=cociente; extraAnswer=resto;
-    display=`${dividendo} ÷ ${f2} = ?`;
-    hint='Cociente y resto';
-  }
-  return {op,display,answer,extraAnswer,hint};
+function genQuestion(lastDisplay){
+  let q, attempts=0;
+  do {
+    const op = activeOps[Math.floor(Math.random()*activeOps.length)];
+    let a,b,answer,display,extraAnswer=0,hint='';
+    if(op==='suma'){
+      const max=+document.getElementById('sumaMax').value;
+      // mínimo 1 en ambos sumandos para evitar ceros
+      a=Math.floor(Math.random()*(max-1))+1;
+      b=Math.floor(Math.random()*(max-a))+1;
+      if(a+b>max){ b=max-a; }
+      if(b<1) b=1;
+      answer=a+b; display=`${a} + ${b} = ?`;
+    } else if(op==='resta'){
+      const max=+document.getElementById('restaMax').value;
+      // a >= 2 para que b pueda ser >= 1 y resultado >= 1
+      a=Math.floor(Math.random()*(max-1))+2;
+      b=Math.floor(Math.random()*(a-1))+1;
+      answer=a-b; display=`${a} − ${b} = ?`;
+    } else if(op==='multiplicacion'){
+      const tbs=tables.length?tables:[1,2,3,4,5,6,7,8,9,10];
+      a=tbs[Math.floor(Math.random()*tbs.length)];
+      b=Math.floor(Math.random()*10)+1;
+      answer=a*b; display=`${a} × ${b} = ?`;
+    } else {
+      const sinResto=document.getElementById('divSinResto').checked;
+      const f1=Math.floor(Math.random()*9)+1;
+      const f2=Math.floor(Math.random()*9)+1;
+      const dividendo=f1*f2+(sinResto?0:Math.floor(Math.random()*f2));
+      const cociente=Math.floor(dividendo/f2);
+      const resto=dividendo%f2;
+      answer=cociente; extraAnswer=resto;
+      display=`${dividendo} ÷ ${f2} = ?`;
+      hint='Cociente y resto';
+    }
+    q={op,display,answer,extraAnswer,hint};
+    attempts++;
+  } while(q.display===lastDisplay && attempts<10); // evitar repetición consecutiva
+  return q;
 }
 
 // ===== JUEGO DUELO =====
 let score1=0,score2=0,streak1=0,streak2=0;
-let q={},done1=false,done2=false;
+let q1={},q2={},done1=false,done2=false;
 let duelTimer=null,timeLeft=120;
 let v1='',v2='',r1='',r2='';
 let divActive1='coc',divActive2='coc';
 
 function buildPad(containerId, side){
   const c=document.getElementById(containerId);
+  const q=side==1?q1:q2;
   const isDiv = q.op==='division';
   if(isDiv){
     c.innerHTML=`
@@ -695,6 +706,7 @@ function setDivActive(side, field){
 function padInput(side, key){
   playTap();
   if((side==1&&done1)||(side==2&&done2)) return;
+  const q=side==1?q1:q2;
   if(q.op==='division'){
     const active=side==1?divActive1:divActive2;
     if(active==='coc'){ if(side==1){if(v1.length<4)v1+=key;}else{if(v2.length<4)v2+=key;} }
@@ -707,6 +719,7 @@ function padInput(side, key){
 }
 function padDel(side){
   playTap();
+  const q=side==1?q1:q2;
   if(q.op==='division'){
     const active=side==1?divActive1:divActive2;
     if(active==='coc'){if(side==1)v1=v1.slice(0,-1);else v2=v2.slice(0,-1);}
@@ -736,10 +749,11 @@ function updatePadDisabled(side){
 }
 
 function submitAnswer(side){
-  if(duelFinished) return; // Candado activo
+  if(duelFinished) return;
   if((side==1&&done1)||(side==2&&done2)) return;
   const val=side==1?v1:v2;
   const rval=side==1?r1:r2;
+  const q=side==1?q1:q2;
   let correct;
   if(q.op==='division'){
     correct=parseInt(val)===q.answer && parseInt(rval||'0')===q.extraAnswer;
@@ -751,14 +765,31 @@ function submitAnswer(side){
     const streak=side==1?streak1:streak2;
     const bonus = streak>0 && streak%3===2 ? 1 : 0;
     const pts=1+bonus;
-    if(side==1){score1+=pts;streak1++;done1=true;}else{score2+=pts;streak2++;done2=true;}
+    if(side==1){score1+=pts;streak1++;}else{score2+=pts;streak2++;}
     if(bonus){ playCompletado(); showBonus(`+${pts} 🔥 ¡Racha!`); }
     flashBox(side, true);
     updateScores();
     updateStreakBadges();
-    updatePadDisabled(side);
-    checkWin();
-    setTimeout(()=>{ if(!checkWin()) nextQuestion(); }, 700);
+    if(!checkWin()){
+      // Generar nueva pregunta solo para este jugador, sin esperar al otro
+      setTimeout(()=>{
+        if(duelFinished) return;
+        if(side==1){
+          v1='';r1='';divActive1='coc';
+          q1=genQuestion(q1.display);
+          document.getElementById('qText1').textContent=q1.display;
+          document.getElementById('qHint1').textContent=q1.hint;
+          document.getElementById('qDone1').style.display='none';
+        } else {
+          v2='';r2='';divActive2='coc';
+          q2=genQuestion(q2.display);
+          document.getElementById('qText2').textContent=q2.display;
+          document.getElementById('qHint2').textContent=q2.hint;
+          document.getElementById('qDone2').style.display='none';
+        }
+        buildPad(`pad${side}`,side);
+      }, 600);
+    }
   } else {
     playError();
     if(side==1)streak1=0;else streak2=0;
@@ -792,39 +823,44 @@ function updateStreakBadges(){
   if(streak2>0){ b2.style.display=''; b2.textContent=`🔥 ×${streak2}`; }else b2.style.display='none';
 }
 function updateRope(){
-  const diff=score1-score2;
-  const maxDiff=cfg.diffWin;
-  const ratio=Math.max(-1,Math.min(1,diff/maxDiff));
-  const offset=ratio*80; // positivo = izq tira
-  // Mover personajes y cuerda
-  const cL=document.getElementById('charLeft');
-  const cR=document.getElementById('charRight');
-  const flag=document.getElementById('flagGroup');
-  const rope=document.getElementById('ropePath');
+  // Posiciones base (inicio de partida)
+  const flagX   = 190; // bandera fija siempre en el centro
+  const leftBase  = 68;  // centro del muñeco izquierdo en reposo
+  const rightBase = 312; // centro del muñeco derecho en reposo
+  // Distancia de cada muñeco a la bandera (en reposo)
+  const distLeft  = flagX - leftBase;   // 122 px
+  const distRight = rightBase - flagX;  // 122 px
+  // diffWin = número de aciertos netos para arrastrar al rival hasta la bandera
+  const steps = cfg.diffWin;
+  // netScore positivo = J1 lleva ventaja = J2 se acerca a la bandera (se mueve a la izquierda)
+  // netScore negativo = J2 lleva ventaja = J1 se acerca a la bandera (se mueve a la derecha)
+  const net = score1 - score2;
+  const clampedNet = Math.max(-steps, Math.min(steps, net));
+  // Desplazamiento proporcional: cuántos px avanza el muñeco hacia la bandera
+  const stepPxLeft  = distRight / steps; // px por paso que se mueve J1 hacia bandera
+  const stepPxRight = distLeft  / steps; // px por paso que se mueve J2 hacia bandera
+  // Posición actual de cada muñeco
+  // J2 se acerca cuando net > 0 (J1 gana aciertos), J1 se acerca cuando net < 0
+  const leftX  = leftBase  + (clampedNet < 0 ? (-clampedNet) * stepPxLeft  : 0);
+  const rightX = rightBase - (clampedNet > 0 ? ( clampedNet) * stepPxRight : 0);
+  const cL = document.getElementById('charLeft');
+  const cR = document.getElementById('charRight');
+  const rope = document.getElementById('ropePath');
   if(!cL) return;
-  const lx=68+offset*0.5, rx=312+offset*0.5;
-  cL.setAttribute('transform',`translate(${offset*0.4},0)`);
-  cR.setAttribute('transform',`translate(${offset*0.4},0)`);
-  flag.setAttribute('transform',`translate(${offset*0.5},0)`);
-  const lAnchor=80+offset*0.4, rAnchor=300+offset*0.4;
-  rope.setAttribute('d',`M ${lAnchor} 105 Q 190 ${105+Math.abs(offset)*0.08} ${rAnchor} 105`);
-}
-function nextQuestion(){
-  if(duelFinished) return; // Candado activo
-  q=genQuestion();
-  v1='';v2='';r1='';r2='';
-  done1=false;done2=false;
-  divActive1='coc';divActive2='coc';
-  document.getElementById('qText1').textContent=q.display;
-  document.getElementById('qText2').textContent=q.display;
-  document.getElementById('qHint1').textContent=q.hint;
-  document.getElementById('qHint2').textContent=q.hint;
-  document.getElementById('qDone1').style.display='none';
-  document.getElementById('qDone2').style.display='none';
-  buildPad('pad1',1); buildPad('pad2',2);
+  // Desplazamiento relativo a la posición base
+  const dLeft  = leftX  - leftBase;
+  const dRight = rightX - rightBase;
+  cL.setAttribute('transform', `translate(${dLeft},0)`);
+  cR.setAttribute('transform', `translate(${dRight},0)`);
+  // Puntos de anclaje de la cuerda (brazos de cada muñeco)
+  const ropeLeft  = leftX  + 12; // brazo derecho del muñeco izquierdo
+  const ropeRight = rightX - 12; // brazo izquierdo del muñeco derecho
+  // La cuerda va desde el brazo hasta la bandera y del otro lado
+  const sag = Math.abs(dLeft - dRight) * 0.04;
+  rope.setAttribute('d', `M ${ropeLeft} 107 Q ${flagX} ${107 + sag} ${ropeRight} 107`);
 }
 function checkWin(){
-  if(duelFinished) return false; // Candado activo
+  if(duelFinished) return false;
   const diff=Math.abs(score1-score2);
   if(diff>=cfg.diffWin && (score1>0||score2>0)){
     endDuel('diferencia'); return true;
@@ -1238,11 +1274,11 @@ function torneoContinue(){
   document.getElementById('duelP2NameRope').textContent=pair[1];
   document.getElementById('diffLabel').textContent=cfg.diffWin;
   document.getElementById('duelTimer').textContent=formatTime(cfg.timeLimit);
-  q=genQuestion();
-  document.getElementById('qText1').textContent=q.display;
-  document.getElementById('qText2').textContent=q.display;
-  document.getElementById('qHint1').textContent=q.hint;
-  document.getElementById('qHint2').textContent=q.hint;
+  q1=genQuestion(); q2=genQuestion(q1.display);
+  document.getElementById('qText1').textContent=q1.display;
+  document.getElementById('qText2').textContent=q2.display;
+  document.getElementById('qHint1').textContent=q1.hint;
+  document.getElementById('qHint2').textContent=q2.hint;
   document.getElementById('qDone1').style.display='none';
   document.getElementById('qDone2').style.display='none';
   document.getElementById('duelScore1').textContent=0;
@@ -1311,11 +1347,11 @@ function startGame(){
   document.getElementById('duelP2NameRope').textContent=cfg.p2Name;
   document.getElementById('diffLabel').textContent=cfg.diffWin;
   document.getElementById('duelTimer').textContent=formatTime(cfg.timeLimit);
-  q=genQuestion();
-  document.getElementById('qText1').textContent=q.display;
-  document.getElementById('qText2').textContent=q.display;
-  document.getElementById('qHint1').textContent=q.hint;
-  document.getElementById('qHint2').textContent=q.hint;
+  q1=genQuestion(); q2=genQuestion(q1.display);
+  document.getElementById('qText1').textContent=q1.display;
+  document.getElementById('qText2').textContent=q2.display;
+  document.getElementById('qHint1').textContent=q1.hint;
+  document.getElementById('qHint2').textContent=q2.hint;
   document.getElementById('qDone1').style.display='none';
   document.getElementById('qDone2').style.display='none';
   document.getElementById('duelScore1').textContent=0;

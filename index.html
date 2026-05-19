@@ -1042,10 +1042,10 @@ function sdFinish(){
 }
 
 // ===== SUPERVIVENCIA =====
-let survScore=0,survLives=3,survTotal=0,survStreak=0,survQ={};
+let survScore=0,survLives=3,survTotal=0,survStreak=0,survAciertos=0,survQ={};
 let survVal='',survRVal='',survDivActive='coc';
 function startSurvival(){
-  survScore=0;survLives=3;survTotal=0;survStreak=0;
+  survScore=0;survLives=3;survTotal=0;survStreak=0;survAciertos=0;
   survVal='';survRVal='';
   showScreen('screenSurvival');
   survNewQ();
@@ -1126,6 +1126,7 @@ function survSubmit(){
   survTotal++;
   if(correct){
     playCorrect();
+    survAciertos++;
     const bonus=survStreak>0&&survStreak%3===2?1:0;
     survScore+=1+bonus;
     survStreak++;
@@ -1142,7 +1143,12 @@ function survSubmit(){
     if(survLives<=0){
       setTimeout(()=>{
         playVictoria();
-        showResult({title:'💀 ¡Juego terminado!',trophy:false,stats:[{label:'Puntuación',val:survScore,sub:'puntos'},{label:'Preguntas',val:survTotal,sub:'respondidas'},{label:'Aciertos',val:survTotal>0?Math.round((survScore-(survTotal-survTotal+survScore))/survTotal*100)+'%':'0%',sub:''}],revancha:false});
+        const pct=survTotal>0?Math.round(survAciertos/survTotal*100)+'%':'0%';
+        showResult({title:'💀 ¡Juego terminado!',trophy:false,stats:[
+          {label:'Puntuación',val:survScore,sub:'puntos'},
+          {label:'Respondidas',val:survTotal,sub:'preguntas'},
+          {label:'Aciertos',val:pct,sub:`${survAciertos} correctas`}
+        ],revancha:false});
       },600);
       return;
     }

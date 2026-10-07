@@ -2234,7 +2234,14 @@ function teacherRender(){
       : '<span class="on-note">Esperando a que los alumnos entren…</span>';
     const plan = T.roundsPlan || Swiss.roundsFor(act.length);
     $('onTRounds').textContent = plan;
-    $('onTCfgInfo').textContent = act.length >= 2 ? `≈ ${Math.ceil(plan*(meta.duration+25)/60)} min en total` : '';
+    const rec = Swiss.roundsFor(act.length);
+    let info = '';
+    if(act.length >= 2){
+      info = `Recomendado para ${act.length}: ${rec} · ≈ ${Math.ceil(plan*(meta.duration+25)/60)} min`;
+      if(plan < rec) info += ' · ⚠️ con menos rondas puede haber empates arriba';
+      else if(plan > rec) info += ' · más rondas = más justo, pero más largo';
+    }
+    $('onTCfgInfo').textContent = info;
     $('onTStartBtn').disabled = act.length < 2;
     $('onTStartBtn').style.opacity = act.length < 2 ? .5 : 1;
   }

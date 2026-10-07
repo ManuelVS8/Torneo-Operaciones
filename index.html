@@ -255,6 +255,63 @@ textarea:focus{border-color:var(--orange);}
 .modal-box{background:#fff;border-radius:16px;padding:2rem;max-width:420px;width:90%;box-shadow:0 12px 40px rgba(0,0,0,.2);text-align:center;}
 .modal-box h3{color:var(--blue-dark);font-weight:900;font-size:1.2rem;margin-bottom:.8rem;}
 .modal-box p{color:var(--blue-700);font-size:.95rem;margin-bottom:.6rem;}
+
+/* ===== SUIZO ONLINE ===== */
+.btn-student{background:var(--blue-600);color:#fff;}
+.on-box{width:100%;max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:.8rem;}
+.on-field{display:flex;flex-direction:column;gap:.25rem;text-align:left;}
+.on-field label{font-size:.8rem;font-weight:800;color:var(--blue-700);}
+input[type=text].on-code-input{font-size:2rem;font-weight:900;letter-spacing:.35em;text-align:center;font-family:'Courier New',monospace;}
+input[type=email],input[type=password]{
+  width:100%;padding:.55rem .8rem;border:1.5px solid #c0c8f0;border-radius:8px;
+  font-size:.95rem;font-family:inherit;color:var(--blue-dark);outline:none;transition:border-color .2s;
+}
+input[type=email]:focus,input[type=password]:focus{border-color:var(--orange);}
+.on-error{color:var(--red);font-weight:700;font-size:.9rem;min-height:1.2em;}
+.on-note{font-size:.8rem;color:#777;}
+.on-status{background:var(--panel);border-radius:14px;padding:1.2rem;text-align:center;border:1.5px solid #d0d8ff;}
+.on-status .big{font-size:clamp(1.3rem,4vw,2rem);font-weight:900;color:var(--blue-dark);}
+.on-status .sub{color:var(--blue-700);margin-top:.3rem;font-size:.95rem;}
+.on-roomcode{font-family:'Courier New',monospace;font-size:clamp(3rem,10vw,5.5rem);font-weight:900;letter-spacing:.2em;color:var(--blue-600);line-height:1;}
+.on-two{display:grid;grid-template-columns:1.1fr 1fr;gap:1rem;width:100%;align-items:start;}
+@media(max-width:820px){.on-two{grid-template-columns:1fr;}}
+.on-panel{background:var(--panel);border:1.5px solid #d0d8ff;border-radius:14px;padding:.9rem 1rem;}
+.on-panel h3{color:var(--blue-dark);font-size:1rem;font-weight:800;margin-bottom:.6rem;display:flex;justify-content:space-between;align-items:center;gap:.5rem;flex-wrap:wrap;}
+.on-chips{display:flex;flex-wrap:wrap;gap:.4rem;}
+.on-pchip{display:inline-flex;align-items:center;gap:.35rem;background:#fff;border:1.5px solid #c0c8f0;border-radius:20px;padding:4px 10px;font-weight:700;font-size:.85rem;color:var(--blue-700);}
+.on-pchip.off{opacity:.45;}
+.on-pchip.me{border-color:var(--orange);background:#fff8ee;}
+.on-dot{width:9px;height:9px;border-radius:50%;background:var(--green);display:inline-block;}
+.off .on-dot{background:#aaa;}
+.on-kick{border:none;background:none;color:var(--red);cursor:pointer;font-weight:900;font-size:.9rem;padding:0 2px;font-family:inherit;}
+.on-table{width:100%;border-collapse:collapse;font-size:.88rem;}
+.on-table th{color:var(--blue-700);font-size:.72rem;text-align:left;padding:.2rem .4rem;}
+.on-table td{padding:.28rem .4rem;border-top:1px solid #dde3ff;color:var(--blue-dark);font-weight:700;}
+.on-table tr.me td{background:#fff3e0;}
+.on-table td.num,.on-table th.num{text-align:right;font-variant-numeric:tabular-nums;}
+.on-scroll{max-height:46vh;overflow-y:auto;}
+.on-match{display:flex;align-items:center;justify-content:space-between;gap:.5rem;background:#fff;border:1.5px solid #d0d8ff;border-radius:10px;padding:.4rem .7rem;margin-bottom:.4rem;font-weight:700;font-size:.9rem;}
+.on-match.done{opacity:.6;}
+.on-match .nm{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.on-match .nm.r{text-align:right;}
+.on-match .sc{font-family:'Courier New',monospace;font-weight:900;color:var(--blue-dark);white-space:nowrap;}
+.on-match .win{color:var(--green);}
+.on-bignum{font-size:clamp(3rem,12vw,6rem);font-weight:900;color:var(--orange);animation:numPulse 1s infinite;line-height:1.1;}
+@keyframes numPulse{0%,100%{transform:scale(1);}50%{transform:scale(1.14);}}
+#screenOnMatch .game-header{padding-right:3.6rem;}
+.on-roomcode.small{font-size:clamp(1.8rem,5vw,2.6rem);}
+.on-overlay{position:absolute;inset:0;background:rgba(255,255,255,.93);display:none;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;z-index:15;text-align:center;padding:1rem;}
+.on-overlay.show{display:flex;}
+.on-row{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;align-items:center;}
+.on-stepper{display:inline-flex;align-items:center;gap:.5rem;font-weight:800;color:var(--blue-dark);}
+.on-stepper button{width:32px;height:32px;border-radius:50%;border:none;background:var(--blue-600);color:#fff;font-weight:900;cursor:pointer;font-size:1.1rem;font-family:inherit;}
+.on-mini{font-size:.78rem;color:var(--blue-700);font-weight:700;}
+.on-podium{display:flex;flex-direction:column;gap:.4rem;align-items:center;font-size:clamp(1.1rem,3.5vw,1.6rem);font-weight:900;color:var(--blue-dark);}
+.on-match-wrap{position:relative;flex:1;display:flex;flex-direction:column;}
+.rival-score{color:var(--red);}
+.me-score{color:var(--blue-600);}
+#onCharLeft,#onCharRight{transition:transform .45s cubic-bezier(.34,1.4,.64,1);}
+#onRopePath{transition:d .45s cubic-bezier(.34,1.2,.64,1);}
 </style>
 </head>
 <body>
@@ -276,6 +333,7 @@ textarea:focus{border-color:var(--orange);}
     <header>
       <h1>⚔️ <span class="highlight">Guerra de Operaciones</span></h1>
       <div class="subtitle">Configura tu partida y ¡a competir!</div>
+      <div style="margin-top:.6rem;"><button class="btn btn-student btn-sm" style="min-width:250px;height:40px;" onclick="OL('openJoin')">🎒 Soy alumno · Unirme a un torneo</button></div>
     </header>
     <div class="start-content" style="gap:.8rem;">
 
@@ -285,6 +343,7 @@ textarea:focus{border-color:var(--orange);}
         <div class="chip-group" id="modeChips">
           <button class="chip active" data-mode="duelo" onclick="selectMode(this,'duelo')">⚔️ Duelo 1vs1</button>
           <button class="chip" data-mode="torneo" onclick="selectMode(this,'torneo')">🏆 Torneo</button>
+          <button class="chip" data-mode="suizo" onclick="selectMode(this,'suizo')">🌐 Suizo online</button>
           <button class="chip" data-mode="supervivencia" onclick="selectMode(this,'supervivencia')">💀 Supervivencia</button>
         </div>
       </div>
@@ -360,17 +419,39 @@ Carlos</textarea>
           <h3>🏁 Condiciones de victoria</h3>
           <label class="row" style="margin-bottom:2px;">Diferencia para ganar: <span class="range-val" id="diffWinVal">5</span> pts</label>
           <input type="range" min="1" max="20" value="5" id="diffWin" oninput="document.getElementById('diffWinVal').textContent=this.value" onchange="playTap()"/>
-          <label class="row" style="margin-top:.4rem;"><input type="checkbox" id="useTime" checked onchange="toggleTimeOpt();playTap();"> Tiempo máximo</label>
+          <label class="row" id="useTimeRow" style="margin-top:.4rem;"><input type="checkbox" id="useTime" checked onchange="toggleTimeOpt();playTap();"> Tiempo máximo</label>
           <div id="timeOpts">
             <label class="row" style="margin-bottom:2px;margin-top:.2rem;">Tiempo: <span class="range-val" id="timeLimitVal">2:00</span></label>
             <input type="range" min="30" max="600" step="30" value="120" id="timeLimit" oninput="updateTimeLabel()" onchange="playTap()"/>
           </div>
         </div>
 
+        <!-- SUIZO ONLINE (profesor) -->
+        <div class="config-card config-full" id="cardOnline" style="display:none;">
+          <h3>🌐 Torneo suizo online <span style="font-weight:400;font-size:.8rem;">(todos juegan a la vez, cada uno en su Chromebook)</span></h3>
+          <div id="onLoggedOut">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-bottom:.6rem;">
+              <div class="on-field"><label for="onEmail">Correo del profesor</label><input type="email" id="onEmail" autocomplete="username" onkeydown="if(event.key==='Enter')document.getElementById('onPass').focus()"/></div>
+              <div class="on-field"><label for="onPass">Contraseña</label><input type="password" id="onPass" autocomplete="current-password" onkeydown="if(event.key==='Enter')OL('login')"/></div>
+            </div>
+            <button class="btn btn-blue btn-sm" onclick="OL('login')">🔑 Iniciar sesión</button>
+          </div>
+          <div id="onLoggedIn" style="display:none;">
+            <div style="font-weight:700;color:var(--blue-700);">Sesión: <span id="onWho"></span> · <span id="onAuthState"></span></div>
+            <div class="on-note" id="onUidBox" style="display:none;margin-top:.3rem;">Para autorizarla, añade en Realtime Database <code>teachers → <span id="onUid"></span> = true</code></div>
+            <div class="on-row" style="justify-content:flex-start;margin-top:.5rem;">
+              <button class="btn btn-ghost btn-sm" onclick="OL('logout')">Cerrar sesión</button>
+              <button class="btn btn-blue btn-sm" id="onResumeBtn" style="display:none;" onclick="OL('resume')">↩️ Reanudar sala <span id="onResumeCode"></span></button>
+            </div>
+          </div>
+          <div class="on-error" id="onLoginErr"></div>
+          <div class="on-note">Elige arriba las operaciones, la ventaja para ganar y la duración de cada combate; luego pulsa «CREAR SALA».</div>
+        </div>
+
       </div>
 
       <div id="opWarning" style="color:var(--red);font-weight:700;font-size:.9rem;display:none;">⚠️ Selecciona al menos una operación</div>
-      <button class="btn btn-primary" style="font-size:1.1rem;min-width:200px;height:52px;animation:pulse 2s infinite;" onclick="startGame()">⚔️ ¡COMENZAR!</button>
+      <button class="btn btn-primary" style="font-size:1.1rem;min-width:200px;height:52px;animation:pulse 2s infinite;" id="startBtn" onclick="startGame()">⚔️ ¡COMENZAR!</button>
     </div>
   </section>
 
@@ -499,6 +580,180 @@ Carlos</textarea>
     </div>
   </section>
 
+  <!-- ====== SUIZO ONLINE: ALUMNO · UNIRSE ====== -->
+  <section class="screen" id="screenOnJoin">
+    <header>
+      <h1>🎒 <span class="highlight">Unirme al torneo</span></h1>
+      <div class="subtitle">Pide el código a tu profe</div>
+    </header>
+    <div class="start-content">
+      <div class="on-box">
+        <div class="on-field">
+          <label for="onJoinCode">Código de sala</label>
+          <input type="text" class="on-code-input" id="onJoinCode" inputmode="numeric" maxlength="4" placeholder="0000" autocomplete="off" onkeydown="if(event.key==='Enter')document.getElementById('onJoinName').focus()"/>
+        </div>
+        <div class="on-field">
+          <label for="onJoinName">Tu nombre o alias</label>
+          <input type="text" id="onJoinName" maxlength="16" placeholder="Ana" autocomplete="off" onkeydown="if(event.key==='Enter')OL('join')"/>
+        </div>
+        <div class="on-error" id="onJoinErr"></div>
+        <div class="on-row">
+          <button class="btn btn-primary" id="onJoinBtn" onclick="OL('join')">▶ Entrar</button>
+          <button class="btn btn-ghost" onclick="OL('leaveToHome')">← Volver</button>
+        </div>
+        <button class="btn btn-blue" id="onRejoinBtn" style="display:none;align-self:center;" onclick="OL('rejoin')">↩️ Volver a la sala <span id="onRejoinTxt"></span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SUIZO ONLINE: ALUMNO · SALA DE ESPERA / CLASIFICACIÓN ====== -->
+  <section class="screen" id="screenOnWait">
+    <header>
+      <h1>🌐 <span class="highlight" id="onWaitTitle">Torneo suizo</span></h1>
+      <div class="subtitle" id="onWaitSub"></div>
+    </header>
+    <div class="start-content" style="justify-content:flex-start;">
+      <div class="on-box" style="max-width:640px;">
+        <div class="on-status"><div class="big" id="onWaitBig"></div><div class="sub" id="onWaitInfo"></div></div>
+        <div class="on-podium on-panel" id="onWaitPodium" style="display:none;"></div>
+        <div class="on-panel" id="onWaitLobbyBox">
+          <h3>👥 En la sala <span id="onWaitCount"></span></h3>
+          <div class="on-chips" id="onWaitChips"></div>
+        </div>
+        <div class="on-panel" id="onWaitTableBox" style="display:none;">
+          <h3>📊 Clasificación <span class="on-mini">1 victoria = 1 pt · empate = ½ · desempate: margen</span></h3>
+          <div class="on-scroll"><table class="on-table"><thead><tr><th>#</th><th>Nombre</th><th class="num">Pts</th><th class="num">Margen</th></tr></thead><tbody id="onWaitTable"></tbody></table></div>
+        </div>
+        <button class="btn btn-ghost btn-sm" style="align-self:center;" onclick="OL('leaveRoom')">Salir de la sala</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SUIZO ONLINE: ALUMNO · COMBATE ====== -->
+  <section class="screen" id="screenOnMatch">
+    <div class="on-match-wrap">
+      <div class="game-header">
+        <div class="player-score">
+          <div class="player-name score-p1" id="onMeName">Yo</div>
+          <div class="score-num score-p1" id="onMeScore">0</div>
+          <div class="streak-badge" id="onStreak" style="display:none;">🔥 ×0</div>
+        </div>
+        <div class="timer-center">
+          <div class="timer-display" id="onTimer">1:00</div>
+          <div style="font-size:.7rem;color:#888;margin-top:2px;">Ronda <span id="onRoundLbl">1</span> · Diferencia para ganar: <span id="onDiffLbl">5</span></div>
+        </div>
+        <div class="player-score">
+          <div class="player-name score-p2" id="onRivalName">Rival</div>
+          <div class="score-num score-p2" id="onRivalScore">0</div>
+        </div>
+      </div>
+      <div class="game-arena" style="justify-content:center;">
+        <div class="player-panel">
+          <div class="question-box" id="onQBox">
+            <div class="q-label">Tu pregunta</div>
+            <div class="q-text" id="onQText">—</div>
+            <div class="q-hint" id="onQHint"></div>
+            <div class="q-done" id="onQDone" style="display:none;">✅ ¡Correcto!</div>
+          </div>
+          <div class="numpad" id="onPad"></div>
+        </div>
+        <div class="rope-center">
+          <svg class="rope-svg" id="onRopeSvg" viewBox="0 0 380 200" xmlns="http://www.w3.org/2000/svg">
+          <!-- Línea central -->
+          <line x1="190" y1="10" x2="190" y2="190" stroke="#d0d8ff" stroke-width="1.5" stroke-dasharray="5,4"/>
+          <!-- Bandera -->
+          <g id="onFlagGroup">
+            <line x1="190" y1="55" x2="190" y2="82" stroke="var(--orange)" stroke-width="3"/>
+            <polygon id="onFlagPoly" points="190,55 212,66 190,77" fill="var(--orange)"/>
+          </g>
+          <!-- Cuerda -->
+          <path id="onRopePath" d="M 80 105 Q 190 105 300 105" stroke="#b8860b" stroke-width="6" fill="none" stroke-linecap="round"/>
+          <!-- Personaje izq -->
+          <g id="onCharLeft">
+            <circle cx="68" cy="78" r="13" fill="var(--blue-600)"/>
+            <rect x="58" y="91" width="20" height="24" rx="4" fill="var(--blue-700)"/>
+            <line x1="78" y1="99" x2="93" y2="107" stroke="var(--blue-700)" stroke-width="5" stroke-linecap="round"/>
+            <line x1="58" y1="99" x2="48" y2="107" stroke="var(--blue-700)" stroke-width="5" stroke-linecap="round"/>
+            <line x1="63" y1="115" x2="59" y2="132" stroke="#0a2a4a" stroke-width="5" stroke-linecap="round"/>
+            <line x1="73" y1="115" x2="77" y2="132" stroke="#0a2a4a" stroke-width="5" stroke-linecap="round"/>
+            <circle cx="62" cy="75" r="3" fill="white"/><circle cx="74" cy="75" r="3" fill="white"/>
+          </g>
+          <!-- Personaje der -->
+          <g id="onCharRight">
+            <circle cx="312" cy="78" r="13" fill="var(--red)"/>
+            <rect x="302" y="91" width="20" height="24" rx="4" fill="#c0392b"/>
+            <line x1="302" y1="99" x2="287" y2="107" stroke="#c0392b" stroke-width="5" stroke-linecap="round"/>
+            <line x1="322" y1="99" x2="332" y2="107" stroke="#c0392b" stroke-width="5" stroke-linecap="round"/>
+            <line x1="307" y1="115" x2="303" y2="132" stroke="#7f0000" stroke-width="5" stroke-linecap="round"/>
+            <line x1="317" y1="115" x2="321" y2="132" stroke="#7f0000" stroke-width="5" stroke-linecap="round"/>
+            <circle cx="306" cy="75" r="3" fill="white"/><circle cx="318" cy="75" r="3" fill="white"/>
+          </g>
+        </svg>
+          <div class="diff-label">⟵ Tú &nbsp;|&nbsp; Rival ⟶</div>
+        </div>
+      </div>
+      <div class="on-overlay" id="onOverlay">
+        <div class="on-status" style="min-width:min(88%,380px);">
+          <div class="big" id="onOvBig"></div>
+          <div class="on-bignum" id="onOvNum"></div>
+          <div class="sub" id="onOvSub"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SUIZO ONLINE: PROFESOR ====== -->
+  <section class="screen" id="screenOnTeacher">
+    <header>
+      <h1>🌐 <span class="highlight">Torneo suizo</span></h1>
+      <div class="subtitle" id="onTSub"></div>
+    </header>
+    <div style="display:flex;flex-direction:column;gap:.8rem;flex:1;padding:.3rem;">
+      <div class="on-status">
+        <div class="on-mini">Código de sala</div>
+        <div class="on-roomcode" id="onTCode">0000</div>
+        <div id="onTHeadExtra">
+          <div class="sub" id="onTLink"></div>
+          <div class="on-row" style="margin-top:.5rem;"><button class="btn btn-ghost btn-sm" onclick="OL('copyLink')">🔗 Copiar enlace para alumnos</button></div>
+        </div>
+      </div>
+
+      <div class="on-panel" id="onTLobby">
+        <h3>👥 Alumnos <span class="on-mini" id="onTCount"></span></h3>
+        <div class="on-chips" id="onTChips"></div>
+        <div class="on-row" style="margin-top:.9rem;">
+          <div class="on-stepper">Rondas
+            <button onclick="OL('stepRounds',-1)">−</button><span id="onTRounds">5</span><button onclick="OL('stepRounds',1)">+</button>
+          </div>
+          <span class="on-mini" id="onTCfgInfo"></span>
+          <button class="btn btn-primary" id="onTStartBtn" onclick="OL('startTournament')">▶ Empezar torneo</button>
+        </div>
+      </div>
+
+      <div id="onTPlay" style="display:none;flex-direction:column;gap:.8rem;">
+        <div class="on-status"><div class="big" id="onTRoundBig">Ronda 1</div><div class="sub" id="onTRoundInfo"></div></div>
+        <div class="on-two">
+          <div class="on-panel"><h3>⚔️ Combates <span class="on-mini" id="onTMatchCount"></span></h3><div class="on-scroll" id="onTMatches"></div></div>
+          <div class="on-panel"><h3>📊 Clasificación</h3>
+            <div class="on-scroll"><table class="on-table"><thead><tr><th>#</th><th>Nombre</th><th class="num">Pts</th><th class="num">Margen</th></tr></thead><tbody id="onTTable"></tbody></table></div>
+          </div>
+        </div>
+        <div class="on-row" id="onTPlayBtns"></div>
+      </div>
+
+      <div id="onTEnd" style="display:none;flex-direction:column;gap:.8rem;">
+        <div class="on-status"><div class="big">🏆 ¡Torneo terminado!</div></div>
+        <div class="on-podium on-panel" id="onTPodium"></div>
+        <div class="on-panel"><h3>📊 Clasificación final</h3><div class="on-scroll"><table class="on-table"><thead><tr><th>#</th><th>Nombre</th><th class="num">Pts</th><th class="num">Margen</th></tr></thead><tbody id="onTEndTable"></tbody></table></div></div>
+      </div>
+
+      <div class="on-row" style="margin-top:auto;padding-top:.5rem;">
+        <button class="btn btn-ghost btn-sm" onclick="OL('leaveTeacherView')">← Salir sin cerrar</button>
+        <button class="btn btn-red btn-sm" onclick="OL('closeRoom')">✖ Cerrar sala</button>
+      </div>
+    </div>
+  </section>
+
   <!-- ====== RESULTADO ====== -->
   <section class="screen" id="screenResult">
     <div class="result-content">
@@ -514,6 +769,18 @@ Carlos</textarea>
     </div>
   </section>
 
+</div>
+
+<!-- MODAL CONFIRMACIÓN (sustituye a confirm()) -->
+<div class="modal-overlay" id="uiConfirm" style="z-index:1100;">
+  <div class="modal-box">
+    <h3 id="uiConfirmTitle">¿Seguro?</h3>
+    <p id="uiConfirmMsg"></p>
+    <div style="display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap;margin-top:.8rem;">
+      <button class="btn btn-ghost" id="uiConfirmNo">Cancelar</button>
+      <button class="btn btn-red" id="uiConfirmYes">Aceptar</button>
+    </div>
+  </div>
 </div>
 
 <!-- MODAL EMPATE/SD -->
@@ -569,6 +836,155 @@ document.getElementById('muteBtn').onclick = function(){
   }
 };
 
+// ===== SUIZO: lógica pura (sin DOM ni Firebase) =====
+const Swiss = (function(){
+  // Rondas recomendadas, como en ajedrez: ceil(log2(N)), entre 1 y N-1
+  function roundsFor(n){
+    if(n<2) return 0;
+    return Math.max(1, Math.min(n-1, Math.ceil(Math.log2(n))));
+  }
+  // Generador pseudoaleatorio con semilla (mulberry32)
+  function rng(seed){
+    let t = seed>>>0;
+    return function(){
+      t = (t + 0x6D2B79F5)>>>0;
+      let r = Math.imul(t ^ (t>>>15), 1|t);
+      r ^= r + Math.imul(r ^ (r>>>7), 61|r);
+      return ((r ^ (r>>>14))>>>0)/4294967296;
+    };
+  }
+  function seedFor(matchSeed, idx){
+    return ((matchSeed>>>0) ^ Math.imul(idx+1, 2654435761))>>>0;
+  }
+  // Clasificación. players: {uid:{name}}, matches: [{a,b,fa,fb,done}], byes: [{uid,kind:'bye'|'abs'}]
+  // Victoria 1, empate 0.5, bye 1, ausente 0. Desempate: margen acumulado (Σ puntos propios − puntos del rival).
+  function standings(players, matches, byes){
+    const st = {};
+    Object.keys(players).forEach(u=>{ st[u] = {uid:u, pts:0, margin:0, games:0, byes:0, abs:0, opps:[]}; });
+    (matches||[]).forEach(m=>{
+      if(!m.done || !st[m.a] || !st[m.b]) return;
+      const fa = +m.fa||0, fb = +m.fb||0;
+      const A = st[m.a], B = st[m.b];
+      A.games++; B.games++;
+      A.margin += fa-fb; B.margin += fb-fa;
+      A.opps.push(m.b); B.opps.push(m.a);
+      if(fa>fb) A.pts += 1; else if(fb>fa) B.pts += 1; else { A.pts += .5; B.pts += .5; }
+    });
+    (byes||[]).forEach(b=>{
+      const s = st[b.uid]; if(!s) return;
+      if(b.kind==='bye'){ s.pts += 1; s.byes++; } else s.abs++;
+    });
+    return st;
+  }
+  function rank(st, players){
+    const nm = u => ((players[u]&&players[u].name)||u).toLowerCase();
+    return Object.values(st).sort((x,y)=>
+      (y.pts-x.pts) || (y.margin-x.margin) || (nm(x.uid)<nm(y.uid)?-1:nm(x.uid)>nm(y.uid)?1:0));
+  }
+  // Emparejamientos. active: array de uids; st: resultado de standings(). rnd: función aleatoria.
+  // Devuelve {pairs:[[a,b],...], bye: uid|null, repeated: n}
+  function pair(active, st, rnd){
+    rnd = rnd || Math.random;
+    // Orden: puntos, margen y, entre iguales, al azar
+    const shuffled = active.map(u=>({u, r:rnd()})).sort((a,b)=>a.r-b.r).map(x=>x.u);
+    const order = shuffled.sort((x,y)=>(st[y].pts-st[x].pts)||(st[y].margin-st[x].margin));
+    let pool = order.slice();
+    let bye = null;
+    if(pool.length%2===1){
+      // Bye: el peor clasificado que aún no haya descansado; si todos descansaron, el de menos byes
+      const minByes = Math.min(...pool.map(u=>st[u].byes));
+      for(let i=pool.length-1;i>=0;i--){
+        if(st[pool[i]].byes===minByes){ bye = pool[i]; pool.splice(i,1); break; }
+      }
+    }
+    const played = (a,b)=> st[a].opps.indexOf(b)>=0;
+    function solve(list, allowRepeat, budget){
+      if(!list.length) return [];
+      if(budget.n--<=0) return null;
+      const first = list[0];
+      for(let j=1;j<list.length;j++){
+        const cand = list[j];
+        if(!allowRepeat && played(first,cand)) continue;
+        const rest = list.slice(1,j).concat(list.slice(j+1));
+        const sub = solve(rest, allowRepeat, budget);
+        if(sub) return [[first,cand]].concat(sub);
+      }
+      return null;
+    }
+    let pairs = solve(pool, false, {n:200000});
+    let repeated = 0;
+    if(!pairs){
+      // Sin solución sin repetir rivales: se permite repetir lo mínimo posible (codicioso)
+      pairs = [];
+      const left = pool.slice();
+      while(left.length){
+        const a = left.shift();
+        let k = left.findIndex(b=>!played(a,b));
+        if(k<0){ k = 0; repeated++; }
+        pairs.push([a, left.splice(k,1)[0]]);
+      }
+    }
+    return {pairs, bye, repeated};
+  }
+  return {roundsFor, rng, seedFor, standings, rank, pair};
+})();
+
+// ===== ENLACE CON EL MODO ONLINE (módulo Firebase al final del archivo) =====
+function OL(name, ...args){
+  if(window.Online && typeof window.Online[name]==='function') return window.Online[name](...args);
+  showToast('⚠️ No se pudo cargar el modo online (¿sin conexión?)');
+}
+// Confirmación integrada (sustituye a confirm())
+function uiConfirm(msg, okLabel, title){
+  return new Promise(res=>{
+    const ov=document.getElementById('uiConfirm');
+    document.getElementById('uiConfirmTitle').textContent=title||'¿Seguro?';
+    document.getElementById('uiConfirmMsg').textContent=msg;
+    const yes=document.getElementById('uiConfirmYes'), no=document.getElementById('uiConfirmNo');
+    yes.textContent=okLabel||'Aceptar';
+    const close=v=>{ ov.classList.remove('open'); yes.onclick=null; no.onclick=null; res(v); };
+    yes.onclick=()=>{ playTap(); close(true); };
+    no.onclick=()=>{ playTap(); close(false); };
+    ov.classList.add('open');
+  });
+}
+// Final en la pizarra entre los dos primeros (reutiliza el duelo local)
+window.OnlineFinalActive=false; window.QCFG_OVERRIDE=null;
+function startOnlineFinal(n1,n2,diff,secs,qcfg){
+  window.QCFG_OVERRIDE=qcfg; window.OnlineFinalActive=true;
+  cfg={p1Name:n1,p2Name:n2,diffWin:diff,useTime:true,timeLimit:secs};
+  torneoActive=true;
+  beginDuel(n1,n2);
+}
+function endOnlineFinal(){ window.OnlineFinalActive=false; window.QCFG_OVERRIDE=null; torneoActive=false; }
+function beginDuel(n1,n2){
+  duelFinished=false;
+  cfg.p1Name=n1; cfg.p2Name=n2;
+  score1=0;score2=0;streak1=0;streak2=0;
+  timeLeft=cfg.timeLimit; v1='';v2='';r1='';r2='';done1=false;done2=false;
+  showScreen('screenDuel');
+  document.getElementById('duelP1Name').textContent=n1;
+  document.getElementById('duelP2Name').textContent=n2;
+  document.getElementById('duelP1NameRope').textContent=n1;
+  document.getElementById('duelP2NameRope').textContent=n2;
+  document.getElementById('diffLabel').textContent=cfg.diffWin;
+  document.getElementById('duelTimer').textContent=formatTime(cfg.timeLimit);
+  q1=genQuestion(); q2=genQuestion(q1.display);
+  document.getElementById('qText1').textContent=q1.display;
+  document.getElementById('qText2').textContent=q2.display;
+  document.getElementById('qHint1').textContent=q1.hint;
+  document.getElementById('qHint2').textContent=q2.hint;
+  document.getElementById('qDone1').style.display='none';
+  document.getElementById('qDone2').style.display='none';
+  document.getElementById('duelScore1').textContent=0;
+  document.getElementById('duelScore2').textContent=0;
+  document.getElementById('streak1Badge').style.display='none';
+  document.getElementById('streak2Badge').style.display='none';
+  updateRope();
+  buildPad('pad1',1); buildPad('pad2',2);
+  startDuelTimer();
+}
+
 // ===== ESTADO GLOBAL =====
 let cfg = {};
 let gameMode = 'duelo';
@@ -586,6 +1002,15 @@ function selectMode(btn, mode){
   document.getElementById('cardNombres').style.display = (mode==='duelo')?'':'none';
   document.getElementById('cardTorneo').style.display = (mode==='torneo')?'':'none';
   document.getElementById('cardVictoria').style.display = (mode==='supervivencia')?'none':'';
+  // Suizo online: tiempo siempre activo, tarjeta de profesor y botón "Crear sala"
+  document.getElementById('cardOnline').style.display = (mode==='suizo')?'':'none';
+  document.getElementById('useTimeRow').style.display = (mode==='suizo')?'none':'';
+  if(mode==='suizo'){
+    document.getElementById('timeOpts').style.display='';
+    if(!window._suizoDefaults){ window._suizoDefaults=true; document.getElementById('timeLimit').value=60; updateTimeLabel(); }
+    OL('onModeSelected');
+  } else toggleTimeOpt();
+  document.getElementById('startBtn').textContent = (mode==='suizo')?'🌐 CREAR SALA':'⚔️ ¡COMENZAR!';
 }
 function toggleOp(btn, op){
   playTap();
@@ -622,35 +1047,47 @@ function updatePlayerCount(){
 }
 
 // ===== GENERADOR DE PREGUNTAS =====
-function genQuestion(lastDisplay){
+function currentQCfg(){
+  if(window.QCFG_OVERRIDE) return window.QCFG_OVERRIDE;
+  return {
+    ops:[...activeOps],
+    sumaMax:+document.getElementById('sumaMax').value,
+    restaMax:+document.getElementById('restaMax').value,
+    tables:tables.length?[...tables]:[1,2,3,4,5,6,7,8,9,10],
+    sinResto:document.getElementById('divSinResto').checked
+  };
+}
+function genQuestion(lastDisplay){ return genQuestionFrom(currentQCfg(), lastDisplay, Math.random); }
+// rnd permite semilla: en el torneo online los dos rivales reciben las mismas preguntas
+function genQuestionFrom(c, lastDisplay, rnd){
+  const toArr=v=>Array.isArray(v)?v:Object.values(v||{});
+  const ops_=toArr(c.ops), tbs_=toArr(c.tables);
   let q, attempts=0;
   do {
-    const op = activeOps[Math.floor(Math.random()*activeOps.length)];
+    const op = ops_[Math.floor(rnd()*ops_.length)];
     let a,b,answer,display,extraAnswer=0,hint='';
     if(op==='suma'){
-      const max=+document.getElementById('sumaMax').value;
-      // mínimo 1 en ambos sumandos para evitar ceros
-      a=Math.floor(Math.random()*(max-1))+1;
-      b=Math.floor(Math.random()*(max-a))+1;
+      const max=+c.sumaMax;
+      a=Math.floor(rnd()*(max-1))+1;
+      b=Math.floor(rnd()*(max-a))+1;
       if(a+b>max){ b=max-a; }
       if(b<1) b=1;
       answer=a+b; display=`${a} + ${b} = ?`;
     } else if(op==='resta'){
-      const max=+document.getElementById('restaMax').value;
-      // a >= 2 para que b pueda ser >= 1 y resultado >= 1
-      a=Math.floor(Math.random()*(max-1))+2;
-      b=Math.floor(Math.random()*(a-1))+1;
+      const max=+c.restaMax;
+      a=Math.floor(rnd()*(max-1))+2;
+      b=Math.floor(rnd()*(a-1))+1;
       answer=a-b; display=`${a} − ${b} = ?`;
     } else if(op==='multiplicacion'){
-      const tbs=tables.length?tables:[1,2,3,4,5,6,7,8,9,10];
-      a=tbs[Math.floor(Math.random()*tbs.length)];
-      b=Math.floor(Math.random()*10)+1;
+      const tbs=tbs_.length?tbs_:[1,2,3,4,5,6,7,8,9,10];
+      a=tbs[Math.floor(rnd()*tbs.length)];
+      b=Math.floor(rnd()*10)+1;
       answer=a*b; display=`${a} × ${b} = ?`;
     } else {
-      const sinResto=document.getElementById('divSinResto').checked;
-      const f1=Math.floor(Math.random()*9)+1;
-      const f2=Math.floor(Math.random()*9)+1;
-      const dividendo=f1*f2+(sinResto?0:Math.floor(Math.random()*f2));
+      const sinResto=!!c.sinResto;
+      const f1=Math.floor(rnd()*9)+1;
+      const f2=Math.floor(rnd()*9)+1;
+      const dividendo=f1*f2+(sinResto?0:Math.floor(rnd()*f2));
       const cociente=Math.floor(dividendo/f2);
       const resto=dividendo%f2;
       answer=cociente; extraAnswer=resto;
@@ -1337,12 +1774,14 @@ function torneoContinue(){
   startDuelTimer();
 }
 function torneoSDResult(winner){
+  if(window.OnlineFinalActive){ OL('finalResult',winner); return; }
   torneoWinners.push(winner);
   const idx=torneoPairIdx;
   torneoResults.push({round:torneoRound,pairIdx:idx,winner});
   torneoNextPair();
 }
 function torneoDuelEnd(winner){
+  if(window.OnlineFinalActive){ OL('finalResult',winner); return; }
   torneoWinners.push(winner);
   torneoResults.push({round:torneoRound,pairIdx:torneoPairIdx,winner});
   torneoNextPair();
@@ -1381,6 +1820,7 @@ function startGame(){
     useTime:document.getElementById('useTime').checked,
     timeLimit:+document.getElementById('timeLimit').value
   };
+  if(gameMode==='suizo'){ OL('createRoom',{timeLimit:cfg.timeLimit,diffWin:cfg.diffWin,qcfg:currentQCfg()}); return; }
   if(gameMode==='torneo'){ startTorneo(); return; }
   if(gameMode==='supervivencia'){ startSurvival(); return; }
   // Duelo
@@ -1461,6 +1901,775 @@ window.addEventListener('DOMContentLoaded',()=>{
   // Preselect suma
   document.getElementById('sumaOptions').style.display='';
 });
+</script>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+import { getAuth, onAuthStateChanged, signInAnonymously, signInWithEmailAndPassword, signOut }
+  from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+import { getDatabase, ref, get, set, update, remove, onValue, onDisconnect, serverTimestamp }
+  from "https://www.gstatic.com/firebasejs/10.14.1/firebase-database.js";
+
+/* =====================================================================
+   CONFIGURACIÓN DE FIREBASE  ←  pega aquí tu bloque firebaseConfig
+   (Consola de Firebase → Configuración del proyecto → Tus apps → Web).
+   Debe incluir databaseURL (se crea al activar Realtime Database).
+   ===================================================================== */
+const FIREBASE_CONFIG = {
+      apiKey: "AIzaSyCCkUd8hvA4MKkbXbr0H0DrrkQY9lPIZSM",
+      authDomain: "guerra-operaciones.firebaseapp.com",
+      databaseURL: "https://guerra-operaciones-default-rtdb.europe-west1.firebasedatabase.app",
+      projectId: "guerra-operaciones",
+      appId: "1:780977124089:web:0326af73f951ff86342828"
+    };
+/* ===================================================================== */
+
+const CONFIGURED = !/PEGA_AQUI|TU_PROYECTO/.test(JSON.stringify(FIREBASE_CONFIG));
+const COUNTDOWN_MS = 7000;   // cuenta atrás antes de cada ronda
+const GRACE_MS = 1500;       // margen tras acabar el tiempo para que lleguen las últimas puntuaciones
+const LS_T = 'guerraOps_suizo_profesor';
+const LS_S = 'guerraOps_suizo_alumno';
+
+let app, auth, db, serverOffset = 0;
+const $ = id => document.getElementById(id);
+const now = () => Date.now() + serverOffset;
+const esc = s => String(s==null?'':s).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const lsGet = k => { try{ return JSON.parse(localStorage.getItem(k)); }catch(e){ return null; } };
+const lsSet = (k,v) => { try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} };
+const lsDel = k => { try{ localStorage.removeItem(k); }catch(e){} };
+const isPerm = e => /permission/i.test((e&&(e.code||e.message))||'');
+const fmtPts = p => (p%1 ? p.toFixed(1) : String(p));
+const fmtMargin = m => (m>0?'+':'')+m;
+const nameKey = n => {
+  const k = n.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]/g,'');
+  return k || ('x'+[...n].map(c=>c.codePointAt(0).toString(36)).join(''));
+};
+const roomRef = (code, path) => ref(db, 'rooms/'+code+(path?'/'+path:''));
+
+/* ---------------- Inicio y autenticación ---------------- */
+function init(){
+  if(db) return true;
+  if(!CONFIGURED){ showToast('⚙️ Falta pegar la configuración de Firebase en el código'); return false; }
+  app = initializeApp(FIREBASE_CONFIG);
+  auth = getAuth(app);
+  db = getDatabase(app);
+  onValue(ref(db, '.info/serverTimeOffset'), s => { serverOffset = s.val() || 0; });
+  onAuthStateChanged(auth, () => renderAuth());
+  return true;
+}
+async function ensureAnon(){
+  if(auth.authStateReady) await auth.authStateReady();
+  if(auth.currentUser) return auth.currentUser;
+  const cred = await signInAnonymously(auth);
+  return cred.user;
+}
+function loginErrorText(e){
+  const c = (e && e.code) || '';
+  if(/invalid-credential|wrong-password|user-not-found|invalid-email/.test(c)) return 'Correo o contraseña incorrectos';
+  if(/too-many-requests/.test(c)) return 'Demasiados intentos. Espera unos minutos.';
+  if(/network/.test(c)) return 'Sin conexión';
+  if(/operation-not-allowed/.test(c)) return 'Activa «Correo electrónico/contraseña» en Firebase → Authentication';
+  return 'No se pudo iniciar sesión';
+}
+async function login(){
+  if(!init()) return;
+  const email = $('onEmail').value.trim(), pass = $('onPass').value;
+  $('onLoginErr').textContent = '';
+  if(!email || !pass){ $('onLoginErr').textContent = 'Escribe correo y contraseña'; return; }
+  try{ await signInWithEmailAndPassword(auth, email, pass); $('onPass').value=''; }
+  catch(e){ $('onLoginErr').textContent = loginErrorText(e); }
+}
+async function logout(){ if(!init()) return; await signOut(auth); lsDel(LS_T); renderAuth(); }
+let teacherChecked = {};
+async function renderAuth(){
+  if(!auth || !$('onLoggedIn')) return;
+  const u = auth.currentUser, isT = !!u && !u.isAnonymous;
+  $('onLoggedOut').style.display = isT ? 'none' : '';
+  $('onLoggedIn').style.display = isT ? '' : 'none';
+  if(!isT) return;
+  $('onWho').textContent = u.email || '';
+  $('onAuthState').textContent = 'Comprobando permisos…';
+  $('onResumeBtn').style.display = 'none';
+  let ok = teacherChecked[u.uid];
+  if(ok === undefined){
+    try{ ok = (await get(ref(db, 'teachers/'+u.uid))).val() === true; }catch(e){ ok = false; }
+    teacherChecked[u.uid] = ok;
+  }
+  if(!auth.currentUser || auth.currentUser.uid !== u.uid) return;
+  if(ok){
+    $('onAuthState').textContent = '✅ Profesor autorizado';
+    $('onUidBox').style.display = 'none';
+    const saved = lsGet(LS_T);
+    if(saved){
+      try{
+        const m = (await get(roomRef(saved,'meta'))).val();
+        if(m && m.host === u.uid){ $('onResumeCode').textContent = saved; $('onResumeBtn').style.display = ''; }
+        else lsDel(LS_T);
+      }catch(e){}
+    }
+  } else {
+    $('onAuthState').textContent = '⚠️ Esta cuenta no tiene permiso para crear salas.';
+    $('onUidBox').style.display = '';
+    $('onUid').textContent = u.uid;
+  }
+}
+
+/* ---------------- Utilidades de datos ---------------- */
+const listMatches = room => Object.entries((room&&room.matches)||{}).map(([id,m]) => Object.assign({id}, m));
+const roundKey = r => 'r'+r;
+function listByes(room, extraByes){
+  const out = [];
+  Object.values((room&&room.rounds)||{}).forEach(rd => {
+    Object.entries(rd.asg||{}).forEach(([uid,a]) => {
+      if(a.bye) out.push({uid, kind:'bye'}); else if(a.abs) out.push({uid, kind:'abs'});
+    });
+  });
+  return out.concat(extraByes||[]);
+}
+function compactStandings(st){
+  const o = {};
+  Object.values(st).forEach(s => { o[s.uid] = {p:s.pts, m:s.margin, g:s.games}; });
+  return o;
+}
+// Clasificación compacta {uid:{p,m,g}} → lista ordenada [{uid,name,pts,margin,games}]
+function rankList(players, compact){
+  const st = {};
+  Object.keys(players||{}).forEach(u => {
+    const c = (compact&&compact[u]) || {p:0,m:0,g:0};
+    st[u] = {uid:u, pts:c.p||0, margin:c.m||0, games:c.g||0};
+  });
+  return Swiss.rank(st, players||{}).map(s => Object.assign({name:(players[s.uid]||{}).name||'?'}, s));
+}
+function tableHtml(rows, meUid){
+  return rows.map((r,i) => `<tr class="${r.uid===meUid?'me':''}"><td>${i+1}</td><td>${esc(r.name)}</td><td class="num">${fmtPts(r.pts)}</td><td class="num">${fmtMargin(r.margin)}</td></tr>`).join('');
+}
+function podiumHtml(players, compact, meta){
+  const rows = rankList(players, compact);
+  let first = meta.champion, second = meta.runnerUp;
+  if(!first){ first = rows[0]&&rows[0].uid; second = rows[1]&&rows[1].uid; }
+  const third = (rows.find(r => r.uid!==first && r.uid!==second)||{}).uid;
+  const nm = u => esc((players[u]||{}).name||'');
+  let h = '';
+  if(first)  h += `<div>🥇 ${nm(first)}</div>`;
+  if(second) h += `<div>🥈 ${nm(second)}</div>`;
+  if(third)  h += `<div>🥉 ${nm(third)}</div>`;
+  return h;
+}
+
+/* =====================================================================
+   PROFESOR
+   ===================================================================== */
+const T = {code:null, room:null, unsub:null, timer:null, pending:new Set(), busy:false, roundsPlan:null, force:false, qcfgDone:false};
+
+async function createRoom(c){
+  if(!init()) return;
+  try{ if(auth.authStateReady) await auth.authStateReady(); }catch(e){}
+  const u = auth.currentUser;
+  if(!u || u.isAnonymous){ showToast('🔑 Inicia sesión como profesor'); return; }
+  const meta = {host:u.uid, createdAt:serverTimestamp(), status:'lobby', round:0, totalRounds:0,
+                duration:c.timeLimit, diffWin:c.diffWin, qcfg:c.qcfg};
+  try{
+    let code = null;
+    for(let i=0;i<10 && !code;i++){
+      const cand = String(Math.floor(1000 + Math.random()*9000));
+      if(!(await get(roomRef(cand,'meta'))).exists()) code = cand;
+    }
+    if(!code){ showToast('⚠️ No se pudo generar un código libre'); return; }
+    await set(roomRef(code), {meta});
+    openTeacher(code);
+  }catch(e){
+    showToast(isPerm(e) ? '⛔ Esta cuenta no está autorizada como profesor' : '⚠️ No se pudo crear la sala');
+  }
+}
+async function resume(){
+  if(!init()) return;
+  const code = lsGet(LS_T); if(!code) return;
+  try{
+    const m = (await get(roomRef(code,'meta'))).val();
+    if(!m){ lsDel(LS_T); showToast('Esa sala ya no existe'); renderAuth(); return; }
+    openTeacher(code);
+  }catch(e){ showToast('⚠️ No se pudo reanudar la sala'); }
+}
+function openTeacher(code){
+  stopTeacher();
+  T.code = code; T.room = null; T.pending = new Set(); T.roundsPlan = null; T.force = false;
+  lsSet(LS_T, code);
+  showScreen('screenOnTeacher');
+  $('onTCode').textContent = code;
+  $('onTLink').textContent = 'Alumnos: abrid este mismo enlace → «🎒 Soy alumno» y escribid el código.';
+  T.unsub = onValue(roomRef(code), snap => {
+    T.room = snap.val();
+    if(!T.room){ stopTeacher(); lsDel(LS_T); showToast('La sala se ha cerrado'); showScreen('screenConfig'); return; }
+    teacherRender(); teacherLogic();
+  });
+  T.timer = setInterval(teacherTick, 250);
+}
+function stopTeacher(){
+  if(T.unsub){ T.unsub(); T.unsub = null; }
+  if(T.timer){ clearInterval(T.timer); T.timer = null; }
+}
+function copyLink(){
+  const url = location.href.split('#')[0].split('?')[0] + '?sala=' + T.code;
+  const done = () => showToast('🔗 Enlace copiado');
+  if(navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(done, () => showToast(url));
+  else showToast(url);
+}
+function activeUids(room){
+  const p = room.players || {};
+  return Object.keys(p).filter(u => p[u].online);
+}
+function stepRounds(d){
+  const n = activeUids(T.room||{}).length;
+  const cur = T.roundsPlan || Swiss.roundsFor(n);
+  T.roundsPlan = Math.max(1, Math.min(12, cur + d));
+  playTap(); teacherRender();
+}
+async function kick(uid){
+  const p = (T.room.players||{})[uid]; if(!p) return;
+  const upd = {}; upd['players/'+uid] = null; upd['names/'+nameKey(p.name)] = null;
+  try{ await update(roomRef(T.code), upd); }catch(e){ showToast('⚠️ No se pudo quitar'); }
+}
+async function startTournament(){
+  if(T.busy) return;
+  const room = T.room, n = activeUids(room).length;
+  if(n < 2){ showToast('Hacen falta al menos 2 alumnos conectados'); return; }
+  playTap();
+  await startRound(1, T.roundsPlan || Swiss.roundsFor(n));
+}
+async function nextRound(){
+  if(T.busy) return;
+  playTap();
+  await startRound(T.room.meta.round + 1, T.room.meta.totalRounds);
+}
+async function startRound(r, total){
+  T.busy = true; T.force = false;
+  try{
+    const room = T.room, players = room.players || {};
+    const active = activeUids(room);
+    const absent = Object.keys(players).filter(u => !players[u].online);
+    const st = Swiss.standings(players, listMatches(room), listByes(room));
+    const res = Swiss.pair(active, st);
+    const startAt = now() + COUNTDOWN_MS, endsAt = startAt + room.meta.duration*1000;
+    const asg = {}, upd = {}, newMatches = [], newByes = [];
+    res.pairs.forEach(([a,b], i) => {
+      const id = roundKey(r)+'_'+(i+1);
+      upd['matches/'+id] = {r, a, b, seed:Math.floor(Math.random()*4294967295), sA:0, sB:0};
+      asg[a] = {m:id, o:b, s:'a'}; asg[b] = {m:id, o:a, s:'b'};
+    });
+    if(res.bye){ asg[res.bye] = {bye:1}; newByes.push({uid:res.bye, kind:'bye'}); }
+    absent.forEach(u => { asg[u] = {abs:1}; newByes.push({uid:u, kind:'abs'}); });
+    upd['rounds/'+roundKey(r)] = {startAt, endsAt, asg};
+    upd['meta/status'] = 'round'; upd['meta/round'] = r; upd['meta/totalRounds'] = total;
+    upd['standings'] = compactStandings(Swiss.standings(players, listMatches(room), listByes(room, newByes)));
+    await update(roomRef(T.code), upd);
+  }catch(e){ showToast('⚠️ No se pudo lanzar la ronda'); }
+  T.busy = false;
+}
+function forceEnd(){ playTap(); T.force = true; teacherLogic(); }
+
+// Congela resultados cuando se alcanza la diferencia o se acaba el tiempo; cierra la ronda cuando todos terminan
+function teacherLogic(){
+  const room = T.room; if(!room || !room.meta || room.meta.status !== 'round') return;
+  const meta = room.meta, r = meta.round, rd = (room.rounds||{})[roundKey(r)]; if(!rd) return;
+  const ms = listMatches(room).filter(m => m.r === r);
+  const t = now();
+  const freeze = [];
+  ms.forEach(m => {
+    if(m.done || T.pending.has(m.id)) return;
+    const sA = m.sA||0, sB = m.sB||0;
+    if(T.force || t >= rd.endsAt + GRACE_MS) freeze.push({id:m.id, fa:sA, fb:sB, why:'time'});
+    else if(Math.abs(sA-sB) >= meta.diffWin && (sA>0 || sB>0)) freeze.push({id:m.id, fa:sA, fb:sB, why:'diff'});
+  });
+  if(freeze.length){
+    freeze.forEach(f => T.pending.add(f.id));
+    const upd = {}, extra = [];
+    freeze.forEach(f => {
+      upd['matches/'+f.id+'/done'] = true; upd['matches/'+f.id+'/fa'] = f.fa;
+      upd['matches/'+f.id+'/fb'] = f.fb; upd['matches/'+f.id+'/why'] = f.why;
+      const m = ms.find(x => x.id === f.id);
+      extra.push({a:m.a, b:m.b, fa:f.fa, fb:f.fb, done:true});
+    });
+    const doneIds = new Set(freeze.map(f => f.id));
+    const allMatches = listMatches(room).filter(m => !doneIds.has(m.id)).concat(extra);
+    upd['standings'] = compactStandings(Swiss.standings(room.players||{}, allMatches, listByes(room)));
+    update(roomRef(T.code), upd).catch(() => { freeze.forEach(f => T.pending.delete(f.id)); });
+    return;
+  }
+  if(ms.every(m => m.done) && !T.pending.has('close'+r)){
+    T.pending.add('close'+r);
+    const upd = {}; upd['meta/status'] = 'between'; upd['rounds/'+roundKey(r)+'/status'] = 'done';
+    update(roomRef(T.code), upd).catch(() => T.pending.delete('close'+r));
+    T.force = false;
+  }
+}
+function teacherTick(){
+  if(!T.room || !T.room.meta) return;
+  teacherLogic();
+  const meta = T.room.meta;
+  if(meta.status !== 'round') return;
+  const rd = (T.room.rounds||{})[roundKey(meta.round)]; if(!rd) return;
+  const t = now(); let txt;
+  if(t < rd.startAt) txt = '⏳ Empieza en ' + Math.ceil((rd.startAt - t)/1000) + ' s';
+  else if(t < rd.endsAt) txt = '⏱ Quedan ' + formatTime(Math.ceil((rd.endsAt - t)/1000));
+  else txt = '🔔 Cerrando combates…';
+  const el = $('onTRoundInfo'); if(el) el.textContent = txt;
+}
+
+function teacherRender(){
+  const room = T.room; if(!room || !room.meta) return;
+  const meta = room.meta, players = room.players || {};
+  const status = meta.status;
+  const act = activeUids(room);
+  $('onTSub').textContent = `Sala ${T.code} · ${meta.diffWin} pts de ventaja · ${formatTime(meta.duration)} por combate`;
+  $('onTLobby').style.display = status==='lobby' ? '' : 'none';
+  $('onTHeadExtra').style.display = status==='lobby' ? '' : 'none';
+  $('onTCode').classList.toggle('small', status!=='lobby');
+  $('onTPlay').style.display = (status==='round'||status==='between'||status==='final') ? '' : 'none';
+  $('onTEnd').style.display = status==='finished' ? '' : 'none';
+
+  if(status === 'lobby'){
+    const rows = Object.entries(players).sort((a,b) => (a[1].joinedAt||0)-(b[1].joinedAt||0));
+    $('onTCount').textContent = `${act.length} conectado${act.length===1?'':'s'}` + (rows.length!==act.length ? ` · ${rows.length} en total` : '');
+    $('onTChips').innerHTML = rows.length ? rows.map(([u,p]) =>
+      `<span class="on-pchip ${p.online?'':'off'}"><span class="on-dot"></span>${esc(p.name)}<button class="on-kick" title="Quitar" onclick="OL('kick','${u}')">✕</button></span>`).join('')
+      : '<span class="on-note">Esperando a que los alumnos entren…</span>';
+    const plan = T.roundsPlan || Swiss.roundsFor(act.length);
+    $('onTRounds').textContent = plan;
+    $('onTCfgInfo').textContent = act.length >= 2 ? `≈ ${Math.ceil(plan*(meta.duration+25)/60)} min en total` : '';
+    $('onTStartBtn').disabled = act.length < 2;
+    $('onTStartBtn').style.opacity = act.length < 2 ? .5 : 1;
+  }
+
+  if(status==='round' || status==='between' || status==='final'){
+    const r = meta.round, rd = (room.rounds||{})[roundKey(r)] || {};
+    const ms = listMatches(room).filter(m => m.r === r).sort((a,b) => parseInt(a.id.split('_')[1]) - parseInt(b.id.split('_')[1]));
+    const nm = u => esc((players[u]||{}).name || '?');
+    $('onTRoundBig').textContent = `Ronda ${r} de ${meta.totalRounds}`;
+    const doneN = ms.filter(m => m.done).length;
+    $('onTMatchCount').textContent = `${doneN}/${ms.length} terminados`;
+    let mh = ms.map(m => {
+      const sA = m.done ? m.fa : (m.sA||0), sB = m.done ? m.fb : (m.sB||0);
+      const wa = m.done && sA > sB, wb = m.done && sB > sA;
+      return `<div class="on-match ${m.done?'done':''}"><span class="nm ${wa?'win':''}">${nm(m.a)}</span><span class="sc">${sA} – ${sB}</span><span class="nm r ${wb?'win':''}">${nm(m.b)}</span></div>`;
+    }).join('');
+    const asg = rd.asg || {};
+    const byeU = Object.keys(asg).filter(u => asg[u].bye), absU = Object.keys(asg).filter(u => asg[u].abs);
+    if(byeU.length) mh += `<div class="on-note">🎟️ Descansa (+1 pt): ${byeU.map(nm).join(', ')}</div>`;
+    if(absU.length) mh += `<div class="on-note">📴 Desconectados esta ronda: ${absU.map(nm).join(', ')}</div>`;
+    $('onTMatches').innerHTML = mh;
+    $('onTTable').innerHTML = tableHtml(rankList(players, room.standings), null);
+
+    let btns = '';
+    if(status === 'round'){
+      if(!T.lastRoundTxt || T.lastRoundTxt !== 'r'+r){ T.lastRoundTxt = 'r'+r; $('onTRoundInfo').textContent = ''; }
+      btns = `<button class="btn btn-ghost btn-sm" onclick="OL('forceEnd')">⏭ Terminar ronda ya</button>`;
+    } else if(status === 'between'){
+      $('onTRoundInfo').textContent = `✅ Ronda ${r} terminada`;
+      if(r < meta.totalRounds) btns = `<button class="btn btn-primary" onclick="OL('nextRound')">▶ Empezar ronda ${r+1}</button>`;
+      else {
+        const rk = rankList(players, room.standings);
+        const a = rk[0], b = rk[1];
+        if(b) btns += `<button class="btn btn-primary" onclick="OL('runFinal')">🏆 Final en la pizarra: ${esc(a.name)} vs ${esc(b.name)}</button>`;
+        btns += `<button class="btn btn-blue" onclick="OL('finishNoFinal')">🏁 Terminar sin final</button>`;
+      }
+    } else {
+      $('onTRoundInfo').textContent = '🏆 Final en la pizarra';
+      btns = `<button class="btn btn-primary" onclick="OL('runFinal')">▶ Reanudar la final</button>`;
+    }
+    $('onTPlayBtns').innerHTML = btns;
+  }
+
+  if(status === 'finished'){
+    $('onTPodium').innerHTML = podiumHtml(players, room.standings, meta);
+    $('onTEndTable').innerHTML = tableHtml(rankList(players, room.standings), null);
+    if(!T.celebrated){ T.celebrated = true; createConfetti(); }
+  }
+}
+
+function runFinal(){
+  const room = T.room, players = room.players || {};
+  const rk = rankList(players, room.standings);
+  if(rk.length < 2) return;
+  playTap();
+  const a = rk[0], b = rk[1];
+  T.finalNames = {}; T.finalNames[a.name] = a.uid; T.finalNames[b.name] = b.uid; T.finalPair = [a.uid, b.uid];
+  update(roomRef(T.code), {'meta/status':'final', 'meta/finalists':[a.uid, b.uid]}).catch(() => {});
+  startOnlineFinal(a.name, b.name, room.meta.diffWin, room.meta.duration, room.meta.qcfg);
+}
+function finalResult(winnerName){
+  endOnlineFinal();
+  const win = T.finalNames[winnerName], other = T.finalPair.find(u => u !== win);
+  update(roomRef(T.code), {'meta/status':'finished', 'meta/champion':win, 'meta/runnerUp':other}).catch(() => {});
+  T.celebrated = false;
+  showScreen('screenOnTeacher');
+  teacherRender();
+}
+function finishNoFinal(){
+  playTap();
+  const rk = rankList(T.room.players||{}, T.room.standings);
+  update(roomRef(T.code), {'meta/status':'finished', 'meta/champion':(rk[0]&&rk[0].uid)||null, 'meta/runnerUp':(rk[1]&&rk[1].uid)||null}).catch(() => {});
+  T.celebrated = false; playVictoria();
+}
+async function closeRoom(){
+  const ok = await uiConfirm('Se borrarán la sala y todos los resultados del torneo.', 'Cerrar sala', '¿Cerrar la sala?');
+  if(!ok) return;
+  const code = T.code;
+  try{ await remove(roomRef(code)); }catch(e){ showToast('⚠️ No se pudo cerrar la sala'); return; }
+  stopTeacher(); lsDel(LS_T); T.code = null; T.room = null;
+  showToast('Sala cerrada'); showScreen('screenConfig'); renderAuth();
+}
+function leaveTeacherView(){ stopTeacher(); showScreen('screenConfig'); renderAuth(); }
+
+/* =====================================================================
+   ALUMNO
+   ===================================================================== */
+const S = {code:null, uid:null, name:null, meta:null, players:{}, standings:null, unsubs:[], match:null, round:0,
+           waitKind:'lobby', lastResult:null, loadingRound:false, celebrated:false};
+
+function openJoin(prefillCode){
+  if(!init()) return;
+  playTap();
+  showScreen('screenOnJoin');
+  $('onJoinErr').textContent = '';
+  if(prefillCode) $('onJoinCode').value = prefillCode;
+  const saved = lsGet(LS_S);
+  const b = $('onRejoinBtn');
+  if(saved && saved.code){ b.style.display = ''; $('onRejoinTxt').textContent = `${saved.code} (${saved.name})`; }
+  else b.style.display = 'none';
+  if(prefillCode) $('onJoinName').focus(); else $('onJoinCode').focus();
+}
+function leaveToHome(){ playTap(); showScreen('screenConfig'); }
+function joinError(msg){ $('onJoinErr').textContent = msg; $('onJoinBtn').disabled = false; }
+async function join(){
+  if(!init()) return;
+  const code = $('onJoinCode').value.trim();
+  const name = $('onJoinName').value.trim().replace(/\s+/g,' ');
+  $('onJoinErr').textContent = '';
+  if(!/^\d{4}$/.test(code)){ joinError('El código tiene 4 números'); return; }
+  if(!name){ joinError('Escribe tu nombre o alias'); return; }
+  playTap();
+  $('onJoinBtn').disabled = true;
+  try{
+    const u = await ensureAnon();
+    const meta = (await get(roomRef(code,'meta'))).val();
+    if(!meta){ joinError('No existe ninguna sala con ese código'); return; }
+    const mine = (await get(roomRef(code,'players/'+u.uid))).val();
+    if(mine){ S.name = mine.name; await enterRoom(code, u.uid); return; }
+    if(meta.status !== 'lobby'){ joinError('El torneo ya ha empezado. Espera al siguiente.'); return; }
+    const upd = {}; upd['players/'+u.uid] = {name, online:true, joinedAt:serverTimestamp()}; upd['names/'+nameKey(name)] = u.uid;
+    try{ await update(roomRef(code), upd); }
+    catch(e){ joinError(isPerm(e) ? 'Ese nombre ya está cogido o el torneo acaba de empezar. Prueba con otro nombre.' : 'No se pudo entrar. Revisa la conexión.'); return; }
+    S.name = name;
+    await enterRoom(code, u.uid);
+  }catch(e){ joinError('No se pudo entrar. Revisa la conexión.'); }
+}
+async function rejoin(){
+  if(!init()) return;
+  const saved = lsGet(LS_S); if(!saved) return;
+  playTap();
+  try{
+    const u = await ensureAnon();
+    const p = (await get(roomRef(saved.code,'players/'+u.uid))).val();
+    if(!p){ lsDel(LS_S); joinError('Ya no estás en esa sala'); $('onRejoinBtn').style.display = 'none'; return; }
+    S.name = p.name;
+    await enterRoom(saved.code, u.uid);
+  }catch(e){ joinError('No se pudo volver a entrar'); }
+}
+async function enterRoom(code, uid){
+  stopStudent();
+  S.code = code; S.uid = uid; S.round = 0; S.match = null; S.lastResult = null; S.celebrated = false; S.meta = null; S.players = {}; S.standings = null;
+  lsSet(LS_S, {code, name:S.name});
+  $('onJoinBtn').disabled = false;
+  // Presencia
+  S.unsubs.push(onValue(ref(db, '.info/connected'), s => {
+    if(s.val() === true){
+      const pr = roomRef(code, 'players/'+uid+'/online');
+      onDisconnect(pr).set(false).catch(() => {});
+      set(pr, true).catch(() => {});
+    }
+  }));
+  S.unsubs.push(onValue(roomRef(code,'players'), s => {
+    const had = !!S.players[uid];
+    S.players = s.val() || {};
+    if(S.meta && had && !S.players[uid]){ kickedOut(); return; }
+    renderWait();
+  }));
+  S.unsubs.push(onValue(roomRef(code,'standings'), s => { S.standings = s.val(); renderWait(); }));
+  S.unsubs.push(onValue(roomRef(code,'meta'), s => onMeta(s.val())));
+}
+function stopStudent(){
+  stopMatch();
+  S.unsubs.forEach(f => { try{ f(); }catch(e){} });
+  S.unsubs = [];
+}
+function kickedOut(){ stopStudent(); lsDel(LS_S); showToast('Te han quitado de la sala'); showScreen('screenOnJoin'); }
+function leaveRoom(){
+  playTap();
+  if(S.code && S.uid && db) set(roomRef(S.code,'players/'+S.uid+'/online'), false).catch(() => {});
+  stopStudent(); lsDel(LS_S); S.code = null;
+  showScreen('screenConfig');
+}
+function onMeta(meta){
+  if(!meta){ stopStudent(); lsDel(LS_S); showToast('La sala se ha cerrado'); showScreen('screenOnJoin'); return; }
+  S.meta = meta;
+  const st = meta.status;
+  if(st === 'lobby'){ S.round = 0; showWait('lobby'); }
+  else if(st === 'round'){
+    if(S.round !== meta.round && !S.loadingRound){ S.round = meta.round; startMyRound(meta.round); }
+  }
+  else if(st === 'between'){ if(S.round !== meta.round){ S.round = meta.round; } stopMatch(); showWait('between'); }
+  else if(st === 'final'){ stopMatch(); showWait('final'); }
+  else if(st === 'finished'){ stopMatch(); showWait('finished'); }
+}
+
+function showWait(kind){
+  S.waitKind = kind;
+  showScreen('screenOnWait');
+  renderWait();
+}
+function renderWait(){
+  if(!$('screenOnWait').classList.contains('active')) return;
+  const kind = S.waitKind, meta = S.meta || {}, players = S.players || {};
+  const nm = u => (players[u]||{}).name || '?';
+  let big = '', info = '', showTable = true, showLobby = false;
+  $('onWaitTitle').textContent = 'Torneo suizo';
+  $('onWaitSub').textContent = `Sala ${S.code} · ${S.name||''}`;
+  if(kind === 'lobby'){
+    big = '⏳ Esperando a que empiece el torneo';
+    info = 'Cuando el profe lo lance, aparecerá tu primer combate.';
+    showTable = false; showLobby = true;
+  } else if(kind === 'bye'){
+    big = '🎟️ Esta ronda descansas';
+    info = 'Sumas 1 punto. Mira cómo va la clasificación.';
+  } else if(kind === 'abs'){
+    big = '📴 Esta ronda no estabas conectado';
+    info = 'Podrás jugar en la siguiente.';
+  } else if(kind === 'wait'){
+    big = S.lastResult ? S.lastResult.title : '✅ Combate terminado';
+    info = (S.lastResult ? S.lastResult.sub + ' · ' : '') + 'Esperando al resto de la clase…';
+  } else if(kind === 'between'){
+    big = `✅ Ronda ${meta.round} terminada`;
+    info = (S.lastResult ? S.lastResult.title + ' · ' : '') + (meta.round < meta.totalRounds ? 'El profe lanzará la siguiente.' : 'Era la última ronda.');
+  } else if(kind === 'final'){
+    const f = Object.values(meta.finalists || {});
+    big = '🏆 ¡Final en la pizarra!';
+    info = f.length === 2 ? `${nm(f[0])} vs ${nm(f[1])}` : '';
+  } else if(kind === 'finished'){
+    big = '🏁 ¡Torneo terminado!';
+    info = meta.champion ? `Campeón: ${nm(meta.champion)}` : '';
+    if(!S.celebrated){ S.celebrated = true; createConfetti(); playVictoria(); }
+  }
+  $('onWaitBig').textContent = big;
+  $('onWaitInfo').textContent = info;
+  $('onWaitLobbyBox').style.display = showLobby ? '' : 'none';
+  $('onWaitTableBox').style.display = showTable ? '' : 'none';
+  $('onWaitPodium').style.display = kind === 'finished' ? '' : 'none';
+  if(showLobby){
+    const rows = Object.values(players).sort((a,b) => (a.joinedAt||0)-(b.joinedAt||0));
+    $('onWaitCount').textContent = rows.length;
+    $('onWaitChips').innerHTML = rows.map(p => `<span class="on-pchip ${p.online?'':'off'} ${p.name===S.name?'me':''}"><span class="on-dot"></span>${esc(p.name)}</span>`).join('');
+  }
+  if(showTable) $('onWaitTable').innerHTML = tableHtml(rankList(players, S.standings), S.uid);
+  if(kind === 'finished') $('onWaitPodium').innerHTML = podiumHtml(players, S.standings, meta);
+}
+
+async function startMyRound(r){
+  S.loadingRound = true;
+  try{
+    const rd = (await get(roomRef(S.code, 'rounds/'+roundKey(r)))).val();
+    const a = rd && rd.asg && rd.asg[S.uid];
+    if(!rd || !a){ showWait('abs'); }
+    else if(a.bye){ S.lastResult = null; showWait('bye'); }
+    else if(a.abs){ S.lastResult = null; showWait('abs'); }
+    else await startMatch(r, rd, a);
+  }catch(e){ showToast('⚠️ Error al cargar la ronda'); }
+  S.loadingRound = false;
+}
+
+/* ---------- Combate del alumno ---------- */
+async function startMatch(r, rd, a){
+  const mref = roomRef(S.code, 'matches/'+a.m);
+  const first = (await get(mref)).val();
+  if(!first) return;
+  stopMatch();
+  const side = a.s;
+  const M = S.match = {id:a.m, r, side, opp:a.o, seed:first.seed, startAt:rd.startAt, endsAt:rd.endsAt,
+    my:(side==='a'?first.sA:first.sB)||0, rival:(side==='a'?first.sB:first.sA)||0, streak:0, qi:0, q:null, lastDisplay:null,
+    val:'', rval:'', divActive:'coc', active:false, over:false, done:false, locked:false, unsub:null, tick:null};
+  showScreen('screenOnMatch');
+  $('onMeName').textContent = S.name;
+  $('onRivalName').textContent = (S.players[a.o]||{}).name || 'Rival';
+  $('onRoundLbl').textContent = r;
+  $('onDiffLbl').textContent = S.meta.diffWin;
+  $('onTimer').textContent = formatTime(S.meta.duration);
+  $('onTimer').classList.remove('urgent');
+  $('onQText').textContent = '—'; $('onQHint').textContent = ''; $('onPad').innerHTML = '';
+  $('onStreak').style.display = 'none'; $('onQDone').style.display = 'none';
+  $('onOverlay').classList.add('show');
+  scoreUI();
+  M.unsub = onValue(mref, snap => onMatchData(M, snap.val()));
+  M.tick = setInterval(() => matchTick(M), 100);
+  matchTick(M);
+}
+function stopMatch(){
+  const M = S.match; if(!M) return;
+  if(M.tick) clearInterval(M.tick);
+  if(M.unsub) M.unsub();
+  S.match = null;
+}
+function ov(big, sub, num){
+  $('onOvBig').textContent = big; $('onOvSub').textContent = sub || '';
+  $('onOvNum').textContent = num == null ? '' : num;
+  $('onOverlay').classList.add('show');
+}
+function matchTick(M){
+  if(S.match !== M) return;
+  const t = now();
+  if(!M.active && !M.over){
+    const left = M.startAt - t;
+    if(left > 0){
+      ov(`Ronda ${M.r}`, `Tu rival: ${(S.players[M.opp]||{}).name || '?'}`, Math.ceil(left/1000));
+      return;
+    }
+    if(t > M.endsAt){ M.over = true; ov('⏱ Tiempo', 'Esperando el resultado…'); return; }
+    M.active = true; $('onOverlay').classList.remove('show'); nextQ();
+  }
+  if(M.active && !M.over){
+    const rem = Math.ceil((M.endsAt - t)/1000);
+    $('onTimer').textContent = formatTime(Math.max(0, rem));
+    $('onTimer').classList.toggle('urgent', rem < 15);
+    if(rem <= 0){ M.over = true; ov('⏱ ¡Tiempo!', 'Esperando el resultado…'); }
+  }
+  if(M.over && !M.done && t > M.endsAt + 8000) $('onOvSub').textContent = 'Esperando al profe…';
+}
+function onMatchData(M, m){
+  if(!m || S.match !== M) return;
+  const mine = (M.side === 'a' ? m.sA : m.sB) || 0, opp = (M.side === 'a' ? m.sB : m.sA) || 0;
+  M.rival = opp; if(mine > M.my) M.my = mine;
+  scoreUI();
+  if(m.done && !M.done){
+    M.done = true; M.over = true; M.active = false; clearInterval(M.tick);
+    const my = M.side === 'a' ? m.fa : m.fb, rv = M.side === 'a' ? m.fb : m.fa;
+    M.my = my; M.rival = rv; scoreUI();
+    const oppName = (S.players[M.opp]||{}).name || 'tu rival';
+    let title, sub = `${my} – ${rv} contra ${oppName}`, icon;
+    if(my > rv){ icon = '🏆'; title = '¡Has ganado!'; playVictoria(); }
+    else if(my < rv){ icon = '😅'; title = 'Has perdido'; }
+    else { icon = '🤝'; title = 'Empate'; playCompletado(); }
+    S.lastResult = {title:`${icon} ${title}`, sub};
+    ov(`${icon} ${title}`, `${sub} · ${m.why==='diff'?'ventaja alcanzada':'tiempo agotado'}`);
+    setTimeout(() => { if(S.match === M){ stopMatch(); if(S.meta && S.meta.status === 'round') showWait('wait'); else renderWait(); } }, 3500);
+  }
+}
+function scoreUI(){
+  const M = S.match; if(!M) return;
+  $('onMeScore').textContent = M.my; $('onRivalScore').textContent = M.rival;
+  ropeUpdate(M.my - M.rival, (S.meta && S.meta.diffWin) || 5);
+}
+function ropeUpdate(net, steps){
+  const flagX = 190, leftBase = 68, rightBase = 312;
+  const distLeft = flagX - leftBase, distRight = rightBase - flagX;
+  const clamped = Math.max(-steps, Math.min(steps, net));
+  const leftX  = leftBase  + (clamped < 0 ? (-clamped) * (distRight/steps) : 0);
+  const rightX = rightBase - (clamped > 0 ? ( clamped) * (distLeft /steps) : 0);
+  const cL = $('onCharLeft'), cR = $('onCharRight'), rope = $('onRopePath'); if(!cL) return;
+  const dLeft = leftX - leftBase, dRight = rightX - rightBase;
+  cL.setAttribute('transform', `translate(${dLeft},0)`);
+  cR.setAttribute('transform', `translate(${dRight},0)`);
+  const sag = Math.abs(dLeft - dRight) * 0.04;
+  rope.setAttribute('d', `M ${leftX+12} 107 Q ${flagX} ${107+sag} ${rightX-12} 107`);
+}
+function nextQ(){
+  const M = S.match; if(!M) return;
+  M.qi++;
+  M.q = genQuestionFrom(S.meta.qcfg, M.lastDisplay, Swiss.rng(Swiss.seedFor(M.seed, M.qi)));
+  M.lastDisplay = M.q.display;
+  M.val = ''; M.rval = ''; M.divActive = 'coc';
+  $('onQText').textContent = M.q.display; $('onQHint').textContent = M.q.hint;
+  $('onQDone').style.display = 'none';
+  buildPad();
+}
+function buildPad(){
+  const M = S.match, c = $('onPad'); if(!M || !M.q) return;
+  const keys = [1,2,3,4,5,6,7,8,9].map(k => `<button class="pad-btn" onclick="Online.padInput('${k}')">${k}</button>`).join('');
+  const tail = `<button class="pad-btn del" onclick="Online.padDel()">⌫</button><button class="pad-btn" onclick="Online.padInput('0')">0</button><button class="pad-btn ok" onclick="Online.submit()">✓</button>`;
+  if(M.q.op === 'division'){
+    c.innerHTML = `<div class="numpad"><div class="div-fields">
+      <div class="div-field-wrap" style="flex:1"><div class="display-field active-field" id="onDispCoc" onclick="Online.setDiv('coc')">—</div><div class="div-field-label">Cociente</div></div>
+      <span style="font-weight:800;color:var(--blue-700);font-size:1.1rem;margin-top:-16px">R</span>
+      <div class="div-field-wrap" style="flex:1"><div class="display-field" id="onDispRes" onclick="Online.setDiv('res')">—</div><div class="div-field-label">Resto</div></div>
+    </div><div class="pad-grid">${keys}${tail}</div></div>`;
+  } else {
+    c.innerHTML = `<div class="numpad"><div class="display-field" id="onDisp">—</div><div class="pad-grid">${keys}${tail}</div></div>`;
+  }
+}
+function padShow(){
+  const M = S.match; if(!M) return;
+  const d = $('onDisp'), c = $('onDispCoc'), r = $('onDispRes');
+  if(d) d.textContent = M.val || '—';
+  if(c) c.textContent = M.val || '—';
+  if(r) r.textContent = M.rval || '—';
+}
+function setDiv(f){
+  const M = S.match; if(!M) return; playTap(); M.divActive = f;
+  const c = $('onDispCoc'), r = $('onDispRes');
+  if(c) c.classList.toggle('active-field', f === 'coc'); if(r) r.classList.toggle('active-field', f === 'res');
+}
+function padInput(k){
+  const M = S.match; if(!M || !M.active || M.over || M.locked || !M.q) return; playTap();
+  if(M.q.op === 'division' && M.divActive === 'res'){ if(M.rval.length < 3) M.rval += k; }
+  else if(M.val.length < 4) M.val += k;
+  padShow();
+}
+function padDel(){
+  const M = S.match; if(!M || !M.active || M.over || M.locked || !M.q) return; playTap();
+  if(M.q.op === 'division' && M.divActive === 'res') M.rval = M.rval.slice(0,-1); else M.val = M.val.slice(0,-1);
+  padShow();
+}
+function submit(){
+  const M = S.match; if(!M || !M.active || M.over || M.locked || !M.q) return;
+  const q = M.q;
+  const correct = q.op === 'division'
+    ? (parseInt(M.val) === q.answer && parseInt(M.rval || '0') === q.extraAnswer)
+    : (parseInt(M.val) === q.answer);
+  const box = $('onQBox');
+  box.classList.remove('flash-correct','flash-error'); void box.offsetWidth;
+  if(correct){
+    playCorrect();
+    const bonus = M.streak > 0 && M.streak % 3 === 2 ? 1 : 0, pts = 1 + bonus;
+    M.my += pts; M.streak++;
+    if(bonus){ playCompletado(); showBonus(`+${pts} 🔥 ¡Racha!`); }
+    box.classList.add('flash-correct');
+    $('onQDone').style.display = '';
+    $('onStreak').style.display = ''; $('onStreak').textContent = `🔥 ×${M.streak}`;
+    scoreUI();
+    set(roomRef(S.code, 'matches/'+M.id+'/'+(M.side === 'a' ? 'sA' : 'sB')), M.my).catch(() => {});
+    M.locked = true;
+    setTimeout(() => { M.locked = false; if(S.match === M && M.active && !M.over) nextQ(); }, 500);
+  } else {
+    playError(); M.streak = 0; $('onStreak').style.display = 'none';
+    box.classList.add('flash-error');
+    M.locked = true;
+    setTimeout(() => { M.locked = false; M.val = ''; M.rval = ''; padShow(); }, 400);
+  }
+}
+
+/* ---------- Entrada desde la pantalla de configuración ---------- */
+function onModeSelected(){ init(); renderAuth(); }
+
+window.Online = {
+  onModeSelected, login, logout, resume, createRoom, leaveTeacherView,
+  startTournament, stepRounds, nextRound, forceEnd, runFinal, finalResult, finishNoFinal, closeRoom, copyLink, kick,
+  openJoin, join, rejoin, leaveToHome, leaveRoom,
+  padInput, padDel, submit, setDiv
+};
+
+// Enlace con ?sala=1234 → abre directamente la pantalla de alumno
+(function(){
+  try{
+    const p = new URLSearchParams(location.search).get('sala');
+    if(p && /^\d{4}$/.test(p)) openJoin(p);
+  }catch(e){}
+})();
 </script>
 </body>
 </html>

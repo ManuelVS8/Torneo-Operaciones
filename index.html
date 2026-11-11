@@ -392,8 +392,12 @@ Carlos</textarea>
               <label class="row" style="margin-bottom:2px;">Minuendo máximo: <span class="range-val" id="restaMaxVal">20</span></label>
               <input type="range" min="5" max="100" value="20" id="restaMax" oninput="document.getElementById('restaMaxVal').textContent=this.value" onchange="playTap()"/>
             </div>
-            <div id="multiOptions" style="display:none;">
-              <div style="font-size:.8rem;color:var(--blue-700);font-weight:700;margin-bottom:.3rem;">Tablas:</div>
+            <div id="multiOptions" style="display:none;"></div>
+            <div id="divOptions" style="display:none;">
+              <label class="row"><input type="checkbox" id="divSinResto" onchange="playTap()"> División sin resto (exactas)</label>
+            </div>
+            <div id="tablesOptions" style="display:none;">
+              <div style="font-size:.8rem;color:var(--blue-700);font-weight:700;margin-bottom:.3rem;" id="tablesLabel">Tablas:</div>
               <div class="chip-group" id="tablesChips">
                 <button class="chip active" data-t="all" onclick="toggleTable(this)">Todas</button>
                 <button class="chip" data-t="1" onclick="toggleTable(this)">1</button>
@@ -407,9 +411,6 @@ Carlos</textarea>
                 <button class="chip" data-t="9" onclick="toggleTable(this)">9</button>
                 <button class="chip" data-t="10" onclick="toggleTable(this)">10</button>
               </div>
-            </div>
-            <div id="divOptions" style="display:none;">
-              <label class="row"><input type="checkbox" id="divSinResto" onchange="playTap()"> División sin resto (exactas)</label>
             </div>
           </div>
         </div>
@@ -1020,6 +1021,8 @@ function toggleOp(btn, op){
   document.getElementById('restaOptions').style.display = ops.resta?'':'none';
   document.getElementById('multiOptions').style.display = ops.multi?'':'none';
   document.getElementById('divOptions').style.display = ops.div?'':'none';
+  document.getElementById('tablesOptions').style.display = (ops.multi||ops.div)?'':'none';
+  document.getElementById('tablesLabel').textContent = (ops.div && !ops.multi) ? 'Tablas (divisor):' : (ops.div ? 'Tablas (factor / divisor):' : 'Tablas:');
   document.getElementById('opWarning').style.display = Object.values(ops).some(Boolean)?'none':'';
 }
 function toggleTable(btn){
@@ -1085,8 +1088,9 @@ function genQuestionFrom(c, lastDisplay, rnd){
       answer=a*b; display=`${a} × ${b} = ?`;
     } else {
       const sinResto=!!c.sinResto;
-      const f1=Math.floor(rnd()*9)+1;
-      const f2=Math.floor(rnd()*9)+1;
+      const tbs=tbs_.length?tbs_:[1,2,3,4,5,6,7,8,9,10];
+      const f1=Math.floor(rnd()*10)+1;
+      const f2=tbs[Math.floor(rnd()*tbs.length)];
       const dividendo=f1*f2+(sinResto?0:Math.floor(rnd()*f2));
       const cociente=Math.floor(dividendo/f2);
       const resto=dividendo%f2;
